@@ -35,3 +35,35 @@ const dynFib = (n) => {
     }
   }
 };
+
+// bubbleSort algorithms
+function bubbleSort(arrOfNums) {
+  let n = arrOfNums.length;
+  let lastElement = n - 1;
+  for (i = 0; i < lastElement; i++) {
+    for (j = 0; j < lastElement - 1; j++) {
+      if (arrOfNums[j] > arrOfNums[j + 1]) {
+        var temp = arrOfNums[j];
+        arrOfNums[j] = arrOfNums[j + 1];
+        arrOfNums[j + 1] = temp;
+      }
+    }
+  }
+  return arrOfNums;
+  /*
+          example on how the code work, let arrOfNums = [9, 3, 5, 6, 7, 1, 8, 2, 0, 4]
+          the first for loop grap all the value in arrOfNums 9, 3, 5, 6, 7, 1, 8, 2, 0, 4
+          the second for loop grap the first value which is 9 and compare it with 3,5,6,7,1,8,2,0,4 
+          and if 9 is greater than any of the number it swap to other position till reach the end of the loop 
+          which is 4 
+          the second comparing take 3 and compare it with 5, 6, 7, 1, 8, 2, 0, 4 and swap if it greater than
+          any of this value it swap it to the other position
+          the third comparing take 5 and compare it with 6, 7, 1, 8, 2, 0, 4 e.t.c
+          NOTICE: at every comparing the length of the loop reduces by 1 and that is what this code 
+          j < lastElement - 1; mean
+          At every number that is pick to run the loop the length is decrement by 1 and this code
+          (j < lastElement - 1;) in the comparing loop
+       */
+}
+let arrOfNums = [7, 9, 1, 5, 2, 10, 23, 6, 2, 4, 9, 34, 0, 8];
+bubbleSort(arrOfNums);
