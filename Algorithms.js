@@ -1,4 +1,4 @@
-// ============================ fibonacci number series ========================
+// Fibonacci number sequence
 function fibonacci(length) {
   if (length == 0 || length == 1) {
     return 1;
@@ -17,3 +17,21 @@ function fibonacci(length) {
   return arr;
 }
 fibonacci(12);
+
+// dynamic Fibonacci number series
+const dynFib = (n) => {
+  let arrList = [];
+  for (let i = 0; i <= n; i++) {
+    arrList[i] = 0;
+    if (n == 1 || n == 2) {
+      return 1;
+    } else {
+      arrList[1] = 1;
+      arrList[2] = 2;
+      for (let i = 3; i <= n; i++) {
+        arrList[i] = arrList[i - 1] + arrList[i - 2];
+      }
+      return arrList;
+    }
+  }
+};
