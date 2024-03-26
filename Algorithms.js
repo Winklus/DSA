@@ -52,8 +52,8 @@ function bubbleSort(arrOfNums) {
   return arrOfNums;
   /*
           example on how the code work, let arrOfNums = [9, 3, 5, 6, 7, 1, 8, 2, 0, 4]
-          the first for loop grap all the value in arrOfNums 9, 3, 5, 6, 7, 1, 8, 2, 0, 4
-          the second for loop grap the first value which is 9 and compare it with 3,5,6,7,1,8,2,0,4 
+          the first for loop grab all the value in arrOfNums 9, 3, 5, 6, 7, 1, 8, 2, 0, 4
+          the second for loop grab the first value which is 9 and compare it with 3,5,6,7,1,8,2,0,4 
           and if 9 is greater than any of the number it swap to other position till reach the end of the loop 
           which is 4 
           the second comparing take 3 and compare it with 5, 6, 7, 1, 8, 2, 0, 4 and swap if it greater than
@@ -67,3 +67,26 @@ function bubbleSort(arrOfNums) {
 }
 let arrOfNums = [7, 9, 1, 5, 2, 10, 23, 6, 2, 4, 9, 34, 0, 8];
 bubbleSort(arrOfNums);
+
+//Converting Numbers to base 2
+function mulBase(num, base) {
+  var s = [];
+  do {
+    s.push(num % base);
+    // take num modulus base and push the remainer to the s stack
+    num = Math.floor((num /= base));
+    // take num and divide it by it base and return it as num example take 32/2 and return 16 and the new num
+  } while (num > 0);
+  // continue running the loop as long as num great than zero when num is equal to zero the condition turn false
+  // and the while loop terminate
+  var converted = "";
+  while (s.length > 0) {
+    converted += s.pop();
+    // then get back the value in the s array obeying LIFO
+  }
+  return converted;
+}
+var num = 32;
+var base = 2;
+var newAnswer = mulBase(num, base);
+console.log(num + " converted to base " + base + " is " + newAnswer);
