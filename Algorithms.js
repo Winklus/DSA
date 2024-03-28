@@ -90,3 +90,26 @@ var num = 32;
 var base = 2;
 var newAnswer = mulBase(num, base);
 console.log(num + " converted to base " + base + " is " + newAnswer);
+
+// Binary search
+let arr = [9, 5, 2, 0, 3, 7, 8, 4, 6];
+function binarySearch(arr, target) {
+  let first = 0;
+  let last = arr.length - 1;
+  while (first <= last) {
+    const mid = Math.floor((first + last) / 2);
+    const guess = arr[mid];
+    if (guess === target) return mid;
+    if (guess > target) {
+      last = mid - 1;
+    } else {
+      first = mid + 1;
+    }
+  }
+  return -1; // Not found
+}
+let result = binarySearch(arr, 7);
+function verify(result) {
+  console.log("Target found: ", arr[result]);
+}
+verify(result);
