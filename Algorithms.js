@@ -113,3 +113,25 @@ function verify(result) {
   console.log("Target found: ", arr[result]);
 }
 verify(result);
+
+// Quick sort algorithm
+function quickSort(arr) {
+  if (arr.length <= 1) return arr;
+  const pivot = arr[0];
+  const left = [];
+  const right = [];
+  for (i = 1; i < arr.length; i++) {
+    arr[i] < pivot ? left.push(arr[i]) : right.push(arr[i]);
+  }
+  return quickSort(left).concat(pivot, quickSort(right));
+  /*
+    arr = [9, 5, 2, 0, 3, 7, 8, 4, 6]
+    pivot is set at index[0] which is 9
+    then we create empty left and right array
+    For loop start at index[1] which is at 5 till the end of the array which is 6
+    At every iteration the number is compare with the pivot and if it is less than pivot it is push to the 
+    left else it push to the right
+  */
+}
+let arr = [9, 5, 2, 0, 3, 7, 8, 4, 6];
+quickSort(arr);
